@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html{height:100%}
+body{margin:0;height:100%;  background-color:#B28FCE;z-index:+1;}/*給body z-index他才沒擋住我的目錄*/
+.firstDiv{
+position:relative;
+  width:100%;
+  height:100%; 
+  white-space:nowrap;
+  z-index:+2;
+}
+.middle{
+  margin:0;
+  padding:10px;
+  position:absolute;
+  top:39%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-family: "Papyrus", "Lucida Handwriting", monospace;
+}
+.firstMiddle{
+  font-size:40px;
+}
+.lala
+{
+	position:fixed;
+	top:65%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:100%;
+    min-width:500px;
+    font-family: "Papyrus", "Courier New", monospace;
+    font-size:20px;
+}
+.firstMode:hover
+{
+	font-size:35px;
+    text-shadow:2px 2px 10px;
+}
+#directory:hover~#left{display:none;}
+
+#top{margin:0;padding:0;list-style-type:none;height:5%;position:fixed;top:15%;width:100%;visibility:hidden;z-index:+5; }
+#left{
+    width:180px;
+    text-align:center;
+    height:2000px;
+}
+#left a{
+    display:block;
+    transition:width 3s;
+    width:180px;
+}
+#left>a:hover{font-size:20px;
+width: 1000px;
+background-color:#3A8FB7;
+color:white;
+}
+#secondMode
+{
+  visibility:hidden;
+  position:fixed;
+  top:50%;
+  right:0;
+  fontsize:15px;
+  margin-bottom:5px;
+}
+#secondMode>#secondDay:hover 
+{
+ font-size:25px;
+ color:yellow;
+}
+#secondMode>#secondNight:hover 
+{
+ font-size:25px;
+ color:yellow;
+}
+.choice/*要弄到跟目錄同一層*/
+{
+	visibility:hidden;
+	position:fixed;
+	top:25%;
+    left:50%;
+    background-color:rgba(254,223,225,0.7);
+    transform:translate(-50%,0);
+    border-radius:10%;
+}
+a{text-decoration:none;}
+</style>
+<script>
+function changeToDay()
+{ document.getElementById('firstDiv').style.height='15%';
+  document.getElementById('firstDiv').style.backgroundColor='rgba(176, 218, 240, 0.6)';
+   document.getElementById('heading').innerHTML='Personal website';
+   document.getElementById('lala').style.display='none';
+    document.getElementById('top').style.backgroundColor='#78C2C4';
+    document.getElementById('left').style.backgroundColor='#A8D8B9';
+        document.getElementById('secondMode').style.visibility='visible';           document.getElementById('top').style.visibility='visible'; 
+        document.getElementById('secondMode').style.color='black';
+           document.getElementById('heading').style.color='black';
+                document.getElementById('top').style.color='black';
+                   
+  document.getElementById('body').style.backgroundColor='#A5DEE4';
+  document.getElementById('home').style.visibility='visible'
+  document.getElementById('perIn').style.visibility='hidden';
+document.getElementById('exp').style.visibility='hidden';
+document.getElementById('fu').style.visibility='hidden';
+document.getElementById('fuu').style.visibility='hidden';
+ }
+function changeToDark()
+{
+  document.getElementById('firstDiv').style.height='15%';
+  document.getElementById('firstDiv').style.backgroundColor='rgb(35, 35, 35)';
+  document.getElementById('heading').innerHTML='Personal Website';
+   document.getElementById('heading').style.color='white';
+  document.getElementById('lala').style.display='none';
+  document.getElementById('top').style.backgroundColor='black';
+     document.getElementById('top').style.color='white';
+document.getElementById('top').style.backgroundColor='rgb(50,50,50)';
+document.getElementById('left').style.backgroundColor='rgb(50,50,50)';
+        document.getElementById('secondMode').style.visibility='visible';   document.getElementById('secondMode').style.color='white';
+        document.getElementById('top').style.visibility='visible'; /*hidden拿掉會一直顯示*/
+          document.getElementById('body').style.backgroundColor='#828282';
+          document.getElementById('home').style.visibility='visible'
+            document.getElementById('perIn').style.visibility='hidden';
+document.getElementById('exp').style.visibility='hidden';
+document.getElementById('fu').style.visibility='hidden';
+document.getElementById('fuu').style.visibility='hidden';
+}
+function directory(){document.getElementById('left').style.display='block';}
+function directoryHide(){document.getElementById('left').style.display='none';}
+
+function perIn(){document.getElementById('perIn').style.visibility='visible';
+document.getElementById('exp').style.visibility='hidden';
+document.getElementById('fu').style.visibility='hidden';
+document.getElementById('fuu').style.visibility='hidden';
+document.getElementById('home').style.visibility='hidden';}
+function exp(){document.getElementById('perIn').style.visibility='hidden';
+document.getElementById('exp').style.visibility='visible';
+document.getElementById('fu').style.visibility='hidden';
+document.getElementById('fuu').style.visibility='hidden';
+document.getElementById('home').style.visibility='hidden';}
+function fu(){document.getElementById('perIn').style.visibility='hidden';
+document.getElementById('exp').style.visibility='hidden';
+document.getElementById('fu').style.visibility='visible';
+document.getElementById('fuu').style.visibility='hidden';
+document.getElementById('home').style.visibility='hidden';}
+function fuu(){document.getElementById('perIn').style.visibility='hidden';
+document.getElementById('exp').style.visibility='hidden';
+document.getElementById('fu').style.visibility='hidden';
+document.getElementById('fuu').style.visibility='visible';
+document.getElementById('home').style.visibility='hidden';}
+</script>
+</head>
+<body id="body">
+<div class="firstDiv" id="firstDiv">
+	<div>
+    	<p class="middle firstMiddle" id="heading">choose mode</p>
+    </div>
+     <div class="lala" id="lala">
+        <div class="firstMode" style="position:absolute;left:33%;" onclick="changeToDay()">day</div>
+        <div class="firstMode" style="position:absolute;right:33%;" onclick="changeToDark()">night</div>
+	</div>
+</div>
+
+
+<ul id="top">
+   <li style="float:left;">
+       <a  id="directory"  onmouseover="directory()" onmouseout="directoryHide()">目錄</a>
+       <div style="display:none;" id="left" onmouseover="directory()" onmouseout="directoryHide()">
+          <a onclick="perIn()">個人資料</a>
+          <a onclick="exp()">大學經歷</a>
+          <a onclick="fu()">未來規劃</a>
+          <a onclick="fuu()">遠望</a>
+       </div>
+ 	</li>
+   <li style="float:right;list-style-type:none;"><a href="https://drive.google.com/file/d/1HtftEMk46BUfVKIRQI9VDL8alVuIlTvw/view?usp=sharing" target="_blank">note&nbsp;</a></li>
+</ul>
+
+
+<div id="secondMode">
+<p onclick="changeToDay()" id="secondDay">day</p>
+<p onclick="changeToDark()" id="secondNight">night</p>
+</div>
+<div id="home" class="choice">
+	<h1>菜鳥網頁守則</h1>
+    <p>首先，本網頁所有內容皆為最高機密</p>
+    <p>點選目錄瀏覽網站其他內容</p>
+    <p>可調整白天與黑夜模式</p>
+    <p>我的<a href="https://docs.google.com/document/d/1P0Ewrr07OD197VZKwc8Phz1kJ6cUh-1UgcOapd1ldig/edit?usp=sharing" target="_blank">程式碼</a>無可讀性</p>
+</div>
+
+<div id="perIn" class="choice">
+	<h1>personal information</h1>
+    <p>姓名:莊汶娟</p>
+    <p>學校與科系:金門大學資工系 顯示</p>
+	<p>個性:</p>
+    <p>看起來不好相處，但其實我人挺好的，跟多人同時說話會非常緊張。</p>
+    <p>喜歡對知識了解透徹，但我都做不到(嘆</p>
+    <p></p>
+</div>
+<div id="exp" class="choice">
+	<h1>大學經歷</h1>
+    <h2>大一上</h2>
+	<p>職務:班代</p>
+    <p>社團:街舞研究社</p>
+    <h2>大一下</h2>
+    <p>職務:學藝</p>
+    <h3>嘿我努力充實自己，但寫出來就是這麼少</h3>
+</div>
+<div id="fu" class="choice">
+	<h1>未來規劃</h1>
+	<p>練出馬甲線(4/1開始練，幾個月後就會有腹肌我跟你說!)</p>	
+    <p>大二上把選修刻選好選滿(被當的節奏?)</p>	
+    <p>大二下去北京交通大學交換，希望各位不要跟我搶名額</p>
+    <p>大三大四準備考研究所</p>
+</div>
+<div id="fuu" class="choice">
+	<h1>遠望(不切實際)</h1>
+	<p>作出劇情隨機生成的遊戲，我希望有人先作出來，這樣我在資工系想作的事就能少一項</p>	
+    <p>畫漫畫</p>	
+    <p>作2D動畫</p>
+    <p>錢</p>
+    <p style="cursor: help;">駭進警察手機裡，翻他的聊天紀錄</p>
+    <p>把這個網頁作成我心目中的樣子</p>
+</div>
+</body>
+</html>
