@@ -2,7 +2,10 @@
 body{
     background-color:#d598a3;
 }
-body>div{
+body>#Dialog{
+    float: left;
+}
+body>#whole{
     float: left;
 }
 #whole{
