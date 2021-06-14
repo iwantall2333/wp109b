@@ -5,9 +5,15 @@ body{
 body>div{
     float: left;
 }
-#chooseGirl{
+#whole{
     height: 100%;
     width: 25%;    
+    border: solid 2px #ad455c;
+    background-color:#f7d9dffb ;
+}
+#chooseGirl{
+    height: 90%;
+    width: 100%;    
     border: solid 2px #ad455c;
     background-color:#f7d9dffb ;
 }
@@ -20,6 +26,11 @@ body>div{
 }
 #music{
     display: none;
+    background-color:#ffeaed ;
+    border: solid 0.2px #e76c87;
+    width: 100%;
+    min-height: auto;
+    height: 10%;
 }
 #musicCC:hover+#music{  /*他們同一層*/
     display: block;
@@ -30,7 +41,7 @@ body>div{
     border-color: #ffdbe6;
     background-color: #ffe9f4;
 }
-#chooseGirl>audio{
+#musicCC{
     height:3%;
     width: 100%;
     border-color: #ffdbe6;

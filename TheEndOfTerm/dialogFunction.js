@@ -1,7 +1,7 @@
 /*左側函式*/
 function choosingSet(){
     if(startLoad){
-        alert("可以在左邊選擇一個人聊天，還可以點擊撥放音樂呦~")
+        alert("可以在左邊選擇一個人聊天(答非所問的那種)，還可以點擊撥放音樂呦~")
         startLoad=0
     }
     for(var i=0;i<8;i++){ 
