@@ -1,5 +1,9 @@
 /*左側函式*/
 function choosingSet(){
+    if(startLoad){
+        alert("可以在左邊選擇一個人聊天，還可以點擊撥放音樂呦~")
+        startLoad=0
+    }
     for(var i=0;i<8;i++){ 
         if(chatRoom[i]!=""){       //所有存在的區塊都要設!
             girlId="girl"+i         /*這裡如果設select=i，select值會卡在<div id=girl>的數量，跑完for迴圈不會變成0 */

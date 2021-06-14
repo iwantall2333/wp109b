@@ -18,7 +18,19 @@ body>div{
     min-height: auto;
     height: 10%;
 }
+#music{
+    display: none;
+}
+#musicCC:hover+#music{  /*他們同一層*/
+    display: block;
+}
 #chooseGirl>button{
+    height:3%;
+    width: 100%;
+    border-color: #ffdbe6;
+    background-color: #ffe9f4;
+}
+#chooseGirl>audio{
     height:3%;
     width: 100%;
     border-color: #ffdbe6;
